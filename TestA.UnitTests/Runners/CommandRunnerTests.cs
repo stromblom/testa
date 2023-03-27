@@ -94,7 +94,7 @@ namespace TestA.UnitTests.Runners
         {
             // Arrange
             const ValidationResult expectedValidationResult = ValidationResult.Success;
-            const int expectedOccurrences = 4;
+            const int expectedOccurrences = 6;
             const string argument = "file/Path.txt";
 
             A.CallTo(() => _fileWrapper.Exists(argument)).Returns(true);
@@ -102,12 +102,13 @@ namespace TestA.UnitTests.Runners
             A.CallTo(() => _fileWrapper.ReadAllLines(argument))
                 .Returns(new[]
                 {
-                    "Path",
+                    "Path, Path; Path.",
                     "Kebab is gut!", 
-                    "Find me this Path", 
-                    "Here is another one, Path", 
-                    "Maybe here? Path",
-                    "But not here: path"
+                    "Find me this Path!", 
+                    "Here is another one, Path: is cool", 
+                    "Maybe here? Path?",
+                    "But not here: path",
+                    "And not here either: fpath"
                 });
             
             // Act

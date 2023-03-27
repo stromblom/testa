@@ -40,12 +40,24 @@ namespace TestA.Runners.Implementations
             var counter = 0;
             foreach (var lineInFile in linesInFile)
             {
-                if (!lineInFile.Contains(term))
+                var wordsInLine = lineInFile
+                    .Replace(",", string.Empty)
+                    .Replace(".", string.Empty)
+                    .Replace(":", string.Empty)
+                    .Replace(";", string.Empty)
+                    .Replace("!", string.Empty)
+                    .Replace("?", string.Empty)
+                    .Split(' ', StringSplitOptions.RemoveEmptyEntries);
+            
+                foreach (var wordInLine in wordsInLine)
                 {
-                    continue;
-                }
+                    if (wordInLine != term)
+                    {
+                        continue;
+                    }
 
-                counter++;
+                    counter++;
+                }
             }
 
             return counter;
