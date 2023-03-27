@@ -1,9 +1,9 @@
 ﻿using TestA.Enums;
 using TestA.Wrappers;
 
-namespace TestA.Runners
+namespace TestA.Runners.Implementations
 {
-    public class CommandRunner
+    public class CommandRunner : ICommandRunner
     {
         private readonly IFileWrapper _fileWrapper;
 

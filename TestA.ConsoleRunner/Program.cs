@@ -1,5 +1,6 @@
 ﻿using TestA.Enums;
 using TestA.Runners;
+using TestA.Runners.Implementations;
 using TestA.Wrappers.Implementations;
 
 var commandRunner = new CommandRunner(new FileWrapper());
