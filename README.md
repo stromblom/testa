@@ -9,14 +9,17 @@ It then opens this file, if found, and counts the occurrences of the file name (
 ## How to build
 ##### Prerequisites
 * dotnet 7
-<br />
+
+#### Build steps
 * Build TaskA.ConsoleRunner.
 * Run TaskA.ConsoleRunner.exe:
-```bat
+```
 TestA.ConsoleRunner.exe <filePath>
 ```
+
 or:
-```bat
+
+```
 dotnet TestA.ConsoleRunner.dll <filePath>
 ```
 
